@@ -1,0 +1,52 @@
+
+<html>
+<head>
+<link rel="stylesheet" href="style1.css">
+<script type="text/javascript">
+function validate()
+{ 
+   if( document.Registration.username.value == "" )
+   {
+     alert( "Please provide your Name!" );
+     document.Registration.username.focus() ;
+     return false;
+   }
+ var email = document.Registration.email.value;
+  atpos = email.indexOf("@");
+  dotpos = email.lastIndexOf(".");
+ if (email == "" || atpos < 1 || ( dotpos - atpos < 2 )) 
+ {
+     alert("Please enter Valid email ID")
+     document.Registration.email.focus() ;
+     return false;
+ }
+   return true ;
+}
+
+
+
+</script>
+</head>
+<body>
+<form method="post" name="Login" onsubmit="return(validate(this))" action="re1.php" id="login">
+<h1>Login</h1>
+  	<div class="form_error" >
+	  <input type="email" name="mailid" placeholder="Email" id="mailid" required>
+	  
+  	</div>
+  	<div class="form_error">
+      <input type="password" name="password" placeholder="Password" id="password" required>
+  	</div>
+  	<div>
+  		<button type="submit" name="register" id="reg_btn">Login</button>
+  	</div>
+	<div>
+	<center><a href="forgot.php">Forgot Password?</a></center>
+	</div>
+
+	<!--<div>
+  		<center><a href="re.php" name="user" id="reg_btn">New User Click Here</a></center>
+  	</div>-->
+</form>
+</body>
+</html>
