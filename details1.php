@@ -1,3 +1,9 @@
+<html>
+<head>
+<link rel="stylesheet" href="style3.css">
+</head>
+<body>
+<div>
 <?php
    define('DB_SERVER', 'localhost');
    define('DB_USERNAME', 'root');
@@ -33,12 +39,15 @@ if(isset($_POST) & !empty($_POST)){
 	if($result)
 	{
                 //echo "prem";
+				$file = "data2.json";
+				$json_string = json_encode($_POST, JSON_PRETTY_PRINT);
+				file_put_contents($file, $json_string, FILE_APPEND);
 				$file = "data1.json";
 				$json_string = json_encode($_POST, JSON_PRETTY_PRINT);
 				file_put_contents($file, $json_string, FILE_APPEND);
 				$str = file_get_contents('data1.json');
 				$json = json_decode($str, true); 
-				echo "Details of the User";
+				echo '<h2> Details of the User </h2>';
 				echo '<pre>' . print_r($json, true) . '</pre>';
 				file_put_contents("data1.json", "");
 				//header('Location: print.html');
@@ -54,3 +63,6 @@ if(isset($_POST) & !empty($_POST)){
 }
 
 ?>
+</div>
+</body>
+</html>
