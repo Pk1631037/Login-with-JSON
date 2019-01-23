@@ -1,0 +1,12 @@
+body {
+  background: #A9D9C3;
+  text-align: center;
+}
+div{
+width: 37%;
+  margin: 100px auto;
+  padding-bottom: 30px;
+  border: 1px solid #918274;
+  border-radius: 5px;
+  background: white;
+}
